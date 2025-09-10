@@ -134,11 +134,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marqu\\OneDrive\\Documents\\code\\matc\\itDev162\\Marquis-Bcole\\Marquis-Bcole\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\marqu\\OneDrive\\Documents\\code\\matc\\itDev162\\Marquis-Bcole\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\marqu\\OneDrive\\Documents\\code\\matc\\itDev162\\Marquis-Bcole\\Marquis-Bcole\\API\\API.csproj",
+      "projectPath": "C:\\Users\\marqu\\OneDrive\\Documents\\code\\matc\\itDev162\\Marquis-Bcole\\API\\API.csproj",
       "packagesPath": "C:\\Users\\marqu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marqu\\OneDrive\\Documents\\code\\matc\\itDev162\\Marquis-Bcole\\Marquis-Bcole\\API\\obj\\",
+      "outputPath": "C:\\Users\\marqu\\OneDrive\\Documents\\code\\matc\\itDev162\\Marquis-Bcole\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -159,8 +159,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\marqu\\OneDrive\\Documents\\code\\matc\\itDev162\\Marquis-Bcole\\Marquis-Bcole\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\marqu\\OneDrive\\Documents\\code\\matc\\itDev162\\Marquis-Bcole\\Marquis-Bcole\\Application\\Application.csproj"
+            "C:\\Users\\marqu\\OneDrive\\Documents\\code\\matc\\itDev162\\Marquis-Bcole\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\marqu\\OneDrive\\Documents\\code\\matc\\itDev162\\Marquis-Bcole\\Application\\Application.csproj"
             }
           }
         }
