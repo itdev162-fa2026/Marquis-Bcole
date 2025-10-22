@@ -23,4 +23,4 @@ public class ValidSalePriceAttribute : ValidationAttribute
 
         return ValidationResult.Success;
     }
-}
+};
