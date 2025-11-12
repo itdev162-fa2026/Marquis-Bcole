@@ -1,6 +1,6 @@
 using Domain;
 using Microsoft.AspNetCore.Mvc;
-using persistence;
+using Persistence;
 
 namespace API.Controllers;
 
@@ -39,7 +39,6 @@ public class WeatherForecastController : ControllerBase
     [HttpPost]
     public ActionResult<WeatherForecast> Create()
     {
-        Console.WriteLine($"Database Path: {_context.DbPath}");
         Console.WriteLine("Insert a new WeatherForecast");
 
         var forecast = new WeatherForecast()
