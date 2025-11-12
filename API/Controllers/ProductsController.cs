@@ -1,7 +1,6 @@
 using System.Net.Http.Headers;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
-using persistence;
 using Persistence;
 
 namespace API.Controllers;
@@ -42,8 +41,7 @@ public class ProductsController : ControllerBase
     [HttpPost]
     public ActionResult<Product> CreateProduct(Product product)
     {
-
-        if (ModelState.IsValid)
+        if (!ModelState.IsValid)
         {
             return UnprocessableEntity(ModelState);
         }
