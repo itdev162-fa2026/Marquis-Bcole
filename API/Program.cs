@@ -1,5 +1,10 @@
 using Persistence;
+using Microsoft.EntityFrameworkCore;
+using Stripe;
+
 var builder = WebApplication.CreateBuilder(args);
+
+StripeConfiguration.ApiKey = builder.Configuration["Stripe:SecretKey"];
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
