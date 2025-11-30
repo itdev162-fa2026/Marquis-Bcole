@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
+
 namespace Domain;
 
 public enum OrderStatus
@@ -25,6 +25,9 @@ public class Order
     public DateTime CreateDate { get; set; }
 
     public DateTime? CompletedDate { get; set; }
+
+    public string? StripeSessionId { get; set; }
+    public string? StripePaymentIntentId { get; set; }
 
     public List<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 }
