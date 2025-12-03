@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createOrder } from "../../services/api";
+import { createCheckoutSession } from "../../services/api";
 import "./Checkout.css";
 
 function Checkout({ cartItems, cartTotal, clearCart }) {
@@ -9,6 +9,7 @@ function Checkout({ cartItems, cartTotal, clearCart }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  // Handle empty cart
   if (!cartItems || cartItems.length === 0) {
     return (
       <div className="checkout-container">
@@ -29,14 +30,21 @@ function Checkout({ cartItems, cartTotal, clearCart }) {
     setError(null);
 
     try {
-      const order = await createOrder(email, cartItems);
+      // Create checkout session in backend
+      const { url } = await createCheckoutSession(email, cartItems);
 
-      clearCart();
+      if (!url) {
+        throw new Error("No checkout URL received from server");
+      }
 
-      navigate(`/order/success?orderId=${order.id}`);
+      // Redirect to Stripe Checkout using the URL
+      window.location.href = url;
+
+      // Note: If redirect succeeds, user will leave this page
+      // Cart will be cleared on the success page after payment
     } catch (err) {
-      console.error("Order creation error:", err);
-      setError(err.message || "Failed to create order. Please try again.");
+      console.error("Checkout error:", err);
+      setError(err.message || "Failed to start checkout. Please try again.");
       setLoading(false);
     }
   };
@@ -108,12 +116,10 @@ function Checkout({ cartItems, cartTotal, clearCart }) {
               className="checkout-button"
               disabled={loading}
             >
-              {loading ? "Processing..." : "Place Order"}
+              {loading ? "Redirecting to payment..." : "Proceed to Payment"}
             </button>
 
-            <p className="next-activity-note">
-              place holder!!!
-            </p>
+            <p className="secure-notice">🔒 Secure payment powered by Stripe</p>
           </form>
         </div>
       </div>
